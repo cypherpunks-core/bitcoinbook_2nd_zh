@@ -335,7 +335,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 
 幣基的前幾個字節以前是隨機的，但現在不是了。根據BIP-34，version-2區塊（版本號為2）必須在幣基交易欄位的開頭包含區塊高度作為腳本 push 操作。
 
-在區塊 211,316 中我們看到的幣基（ 參見 <<generation_tx_example>> ），位於交易輸入的解鎖腳本或 +scriptSig+ 欄位，包含十六進制值 +03443b0403858402062f503253482f+。讓我們解碼它。
+在區塊 277,316 中我們看到的幣基（ 參見 <<generation_tx_example>> ），位於交易輸入的解鎖腳本或 +scriptSig+ 欄位，包含十六進制值 +03443b0403858402062f503253482f+。讓我們解碼它。
 
 第一個字節 +03+ 指示腳本執行引擎將接下來的三個字節壓入腳本堆疊(參見 <<tx_script_ops_table_pushdata>> )。接下來的三個字節，+0x443b04+，是用小端序編碼的區塊高度(倒序，低位字節優先)。反轉字節的順序，結果是 +0x043b44+ ，十進制是277,316。
 
